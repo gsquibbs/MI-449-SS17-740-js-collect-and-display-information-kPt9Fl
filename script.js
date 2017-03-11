@@ -13,8 +13,13 @@ var updaterawPreview = function () {
   var number = numberInput.value
   var describe = describeText.value
 
-  rawPreview.textContent = 'Hi, my name is ' +
-  first + ' ' + last + '! ' + describe + ' If you are interested in a date, you can email me at ' + email + 'or give me a call at ' + number + '.'
+  rawPreview.textContent = '<h1>' + 'Hi, my name is ' + first + ' ' + last + '!' + '</h1>' +
+  '<p>' + describe + '</p>' +
+  '<p>' + ' If you are interested in a date, you can email me at ' +
+  '<a href="mailto:email" target="_blank">' + email + '</a>' +
+  ' or give me a call at ' +
+  '<a href="tel:number"target="_blank">' + number + '</a>' + '.' +
+  '</p>'
 }
 
 firstInput.addEventListener('input', updaterawPreview)
@@ -28,9 +33,15 @@ var updatelivePreview = function () {
   var last = lastInput.value
   var email = emailInput.value
   var number = numberInput.value
-  var describe = describeText.vallue
+  var describe = describeText.value
 
-  livePreview.innerHTML = 'Hi, my name is ' + first + ' ' + last + '! ' + describe + ' If you are intereed in a date, you can email me at ' + email + 'or give me a call at ' + number + '.'
+  livePreview.innerHTML = '<h1>' + 'Hi, my name is ' + first + ' ' + last + '!' + '</h1>' +
+  '<p>' + describe + '</p>' +
+  '<p>' + ' If you are interested in a date, you can email me at ' +
+  '<a href="mailto:email" target="_blank">' + email + '</a>' +
+  ' or give me a call at ' +
+  '<a href="tel:number"target="_blank">' + number + '</a>' + '.' +
+  '</p>'
 }
 
 firstInput.addEventListener('input', updatelivePreview)
