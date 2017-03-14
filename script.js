@@ -1,51 +1,22 @@
-var lastInput = document.getElementById('last')
 var firstInput = document.getElementById('first')
+var lastInput = document.getElementById('last')
 var emailInput = document.getElementById('email')
 var numberInput = document.getElementById('number')
 var rawPreview = document.getElementById('raw')
 var livePreview = document.getElementById('live')
 var describeText = document.getElementById('describe')
 
-var updaterawPreview = function () {
-  var first = firstInput.value
-  var last = lastInput.value
-  var email = emailInput.value
-  var number = numberInput.value
-  var describe = describeText.value
+var greetUser = function () {
+  var greeting = 'Hi my name is ' + firstInput.value + ' ' + lastInput.value + '!'
+  var description = describeText.value
+  var info = 'If you are interested in a date, you can email me at <a href="mailto:' + emailInput.value + '" target="_blank">' + emailInput.value + '</a> ' + 'or give me a call at ' + '<a href="tel:' + numberInput.value + '" target="_blank">' + numberInput.value + '</a>.'
 
-  rawPreview.textContent = '<h1>' + 'Hi, my name is ' + first + ' ' + last + '!' + '</h1>' +
-  '<p>' + describe + '</p>' +
-  '<p>' + ' If you are interested in a date, you can email me at ' +
-  '<a href="mailto:email" target="_blank">' + email + '</a>' +
-  ' or give me a call at ' +
-  '<a href="tel:number"target="_blank">' + number + '</a>' + '.' +
-  '</p>'
+  rawPreview.textContent = '<h1>' + greeting + '</h1>' + '<p>' + description + '</p>' + '<p>' + info + '</p>'
+  livePreview.innerHTML = '<h1>' + greeting + '</h1>' + '<p>' + description + '</p>' + '<p>' + info + '</p>'
 }
 
-firstInput.addEventListener('input', updaterawPreview)
-lastInput.addEventListener('input', updaterawPreview)
-emailInput.addEventListener('input', updaterawPreview)
-numberInput.addEventListener('input', updaterawPreview)
-describeText.addEventListener('input', updaterawPreview)
-
-var updatelivePreview = function () {
-  var first = firstInput.value
-  var last = lastInput.value
-  var email = emailInput.value
-  var number = numberInput.value
-  var describe = describeText.value
-
-  livePreview.innerHTML = '<h1>' + 'Hi, my name is ' + first + ' ' + last + '!' + '</h1>' +
-  '<p>' + describe + '</p>' +
-  '<p>' + ' If you are interested in a date, you can email me at ' +
-  '<a href="mailto:email" target="_blank">' + email + '</a>' +
-  ' or give me a call at ' +
-  '<a href="tel:number"target="_blank">' + number + '</a>' + '.' +
-  '</p>'
-}
-
-firstInput.addEventListener('input', updatelivePreview)
-lastInput.addEventListener('input', updatelivePreview)
-emailInput.addEventListener('input', updatelivePreview)
-numberInput.addEventListener('input', updatelivePreview)
-describeText.addEventListener('input', updatelivePreview)
+firstInput.addEventListener('input', greetUser)
+lastInput.addEventListener('input', greetUser)
+describeText.addEventListener('input', greetUser)
+emailInput.addEventListener('input', greetUser)
+numberInput.addEventListener('input', greetUser)
