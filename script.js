@@ -6,17 +6,22 @@ var rawPreview = document.getElementById('raw')
 var livePreview = document.getElementById('live')
 var describeText = document.getElementById('describe')
 
-var greetUser = function () {
-  var greeting = 'Hi my name is ' + firstInput.value + ' ' + lastInput.value + '!'
-  var description = describeText.value
-  var info = 'If you are interested in a date, you can email me at <a href="mailto:' + emailInput.value + '" target="_blank">' + emailInput.value + '</a> ' + 'or give me a call at ' + '<a href="tel:' + numberInput.value + '" target="_blank">' + numberInput.value + '</a>.'
+var datingProfile = function () {
+  var profile = '<h1> Hi my name is ' +
+  firstInput.value + ' ' + lastInput.value + '!</h1>' +
+  '<p>' + describeText.value + '</p>' +
+  '<p> If you are interested in a date, you can email me at <a href="mailto:' +
+  emailInput.value + '" target="_blank">' +
+  emailInput.value + '</a> ' +
+  'or give me a call at <a href="tel:' + numberInput.value +
+  '" target="_blank">' + numberInput.value + '</a></p>'
 
-  rawPreview.textContent = '<h1>' + greeting + '</h1>' + '<p>' + description + '</p>' + '<p>' + info + '</p>'
-  livePreview.innerHTML = '<h1>' + greeting + '</h1>' + '<p>' + description + '</p>' + '<p>' + info + '</p>'
+  rawPreview.textContent = profile
+  livePreview.innerHTML = profile
 }
 
-firstInput.addEventListener('input', greetUser)
-lastInput.addEventListener('input', greetUser)
-describeText.addEventListener('input', greetUser)
-emailInput.addEventListener('input', greetUser)
-numberInput.addEventListener('input', greetUser)
+firstInput.addEventListener('input', datingProfile)
+lastInput.addEventListener('input', datingProfile)
+describeText.addEventListener('input', datingProfile)
+emailInput.addEventListener('input', datingProfile)
+numberInput.addEventListener('input', datingProfile)
