@@ -7,14 +7,15 @@ var livePreview = document.getElementById('live')
 var describeText = document.getElementById('describe')
 
 var datingProfile = function () {
-  var profile = '<h1> Hi my name is ' +
-  firstInput.value + ' ' + lastInput.value + '!</h1>' +
-  '<p>' + describeText.value + '</p>' +
-  '<p> If you are interested in a date, you can email me at <a href="mailto:' +
-  emailInput.value + '" target="_blank">' +
-  emailInput.value + '</a> ' +
-  'or give me a call at <a href="tel:' + numberInput.value +
-  '" target="_blank">' + numberInput.value + '</a></p>'
+  var profile =
+    '<h1> Hi my name is ' +
+    firstInput.value + ' ' + lastInput.value + '!</h1>' +
+    '<p>' + describeText.value + '</p>' +
+    '<p> If you are interested in a date, you can email me at <a href="mailto:' +
+    emailInput.value + '" target="_blank">' +
+    emailInput.value + '</a> ' +
+    'or give me a call at <a href="tel:' + numberInput.value +
+    '" target="_blank">' + numberInput.value + '</a></p>'
 
   rawPreview.textContent = profile
   livePreview.innerHTML = profile
